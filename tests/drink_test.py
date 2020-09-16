@@ -6,5 +6,5 @@ from src.customer import Customer
 
 class TestDrink(unittest.TestCase):
     def test_get_drink_name(self):
-        self.drink = Drink("Beer", 3.5)
+        self.drink = Drink("Beer", 3)
         self.assertEqual("Beer", self.drink.name)

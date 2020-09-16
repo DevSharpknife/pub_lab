@@ -7,8 +7,9 @@ from src.customer import Customer
 class TestCustomer(unittest.TestCase):
     
     def setUp(self):
-        self.customer = Customer("Bill", 50.0)
-
-    # def test_can_decrease_wallet(self):
-    #     self.customer.decrease_wallet()
-    #     self.assertEqual(46.0, self.customer.wallet)
+        self.customer = Customer("Bill", 50)
+   
+    def test_can_decrease_wallet(self):
+        drink = Drink("Beer", 3)
+        self.customer.decrease_wallet(drink)
+        self.assertEqual(47, self.customer.wallet)

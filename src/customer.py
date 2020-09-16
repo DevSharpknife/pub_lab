@@ -3,8 +3,8 @@ class Customer:
         self.name = name
         self.wallet = wallet
     
-    def decrease_wallet(self, amount):
-        self.wallet -= amount
+    def decrease_wallet(self, drink):
+        self.wallet -= drink.price
 
     # def buy_drink(self, drink):
 
