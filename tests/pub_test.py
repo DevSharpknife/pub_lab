@@ -7,6 +7,7 @@ from src.customer import Customer
 class TestPub(unittest.TestCase):
     def setUp(self):
         self.pub = Pub("Ox", 100)
+        self.customer = Customer("Jenny", 100)
         self.drink_beer = Drink("Beer", 3)
         self.drink_wine = Drink("Wine", 4)
         self.drink_cider = Drink("Cider", 3)
@@ -22,12 +23,19 @@ class TestPub(unittest.TestCase):
         self.drink_soft = Drink("Soda", 1)
         self.pub.add_drink(self.drink_soft)
         self.assertEqual(4, self.pub.stock_count())
-    
+
+    def test_remove_drink(self):
+        self.pub.remove_drink(self.drink_cider)
+        self.assertEqual(2, self.pub.stock_count())
+
     def test_increase_till(self):
         self.pub.increase_till(self.drink_beer)
         self.assertEqual(103, self.pub.till)
+        
+    def test_sell_drink(self):
+        self.pub.sell_drink(self.drink_wine, self.customer)
+        self.assertEqual(96, self.customer.wallet)
+        self.assertEqual(1, len(self.customer.drinks)) 
+        self.assertEqual(104, self.pub.till)
+        self.assertEqual(2, self.pub.stock_count())
 
-    # def test_transaction_amounts_match(self):
-    #     self.customer.decrease_wallet(self.drink_cider)
-    #     self.customer.sell_drink(self.drink_cider)
-    #     self.assertEqual()

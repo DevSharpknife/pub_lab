@@ -9,24 +9,19 @@ class Pub:
     def add_drink(self, drink):
         self.stock_drink.append(drink)
 
+    def remove_drink(self, drink):
+        self.stock_drink.remove(drink)
+
     def stock_count(self):
         return len(self.stock_drink)
 
     def increase_till(self, drink):
         self.till += drink.price
 
-#A Customer should be able to buy a Drink from the Pub, reducing the money in its wallet and increasing the money in the Pub's till
+    def sell_drink(self, drink, customer):
+        customer.decrease_wallet(drink)
+        customer.add_drink_to_customer(drink)
+        self.increase_till(drink)
+        self.remove_drink(drink)
+     
 
-    # def sell_drink(self, drink):
-    #     self.customer.decrease_wallet(drink)
-    #     self.customer.add_drink_to_customer(drink)
-    #     self.till += drink.price
-    #     self.stock_drink -= 1
-
-
-
-# def pay_drink
-
-# def sell_drin(self.):
-#     pay.drink()
-#     charge.customer()
