@@ -14,9 +14,10 @@ class Pub:
 
 #A Customer should be able to buy a Drink from the Pub, reducing the money in its wallet and increasing the money in the Pub's till
     # def charge_customer
-    
-    def pay_for_drink(self, drink):
-        customer.wallet -= self.drink.price
+
+    def sell_drink(self, drink):
+        self.till += drink.price
+
 
 # def pay_drink
 

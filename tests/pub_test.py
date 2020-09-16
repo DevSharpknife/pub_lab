@@ -14,8 +14,15 @@ class TestPub(unittest.TestCase):
 
     def test_pub_has_name(self):
         self.assertEqual("Ox", self.pub.name)
+    
+    def test_has_till(self):
+        self.assertEqual(100, self.pub.till)
 
     def test_add_drink(self):
         self.drink_soft = Drink("Soda", 1.5)
         self.pub.add_drink(self.drink_soft)
         self.assertEqual(4, self.pub.stock_count())
+    
+    def test_increase_till(self):
+        self.pub.sell_drink(self.drink_beer)
+        self.assertEqual(103.5, self.pub.till)
