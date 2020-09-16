@@ -24,7 +24,7 @@ class TestPub(unittest.TestCase):
         self.assertEqual(4, self.pub.stock_count())
     
     def test_increase_till(self):
-        self.pub.sell_drink(self.drink_beer)
+        self.pub.increase_till(self.drink_beer)
         self.assertEqual(103, self.pub.till)
 
     # def test_transaction_amounts_match(self):

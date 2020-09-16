@@ -12,13 +12,16 @@ class Pub:
     def stock_count(self):
         return len(self.stock_drink)
 
+    def increase_till(self, drink):
+        self.till += drink.price
+
 #A Customer should be able to buy a Drink from the Pub, reducing the money in its wallet and increasing the money in the Pub's till
 
-    def sell_drink(self, drink):
-        self.till += drink.price
+    # def sell_drink(self, drink):
+    #     self.customer.decrease_wallet(drink)
+    #     self.customer.add_drink_to_customer(drink)
+    #     self.till += drink.price
     #     self.stock_drink -= 1
-    #     self.customer.decrease_wallet(drink.price)
-        
 
 
 
